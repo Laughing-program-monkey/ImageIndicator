@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NormalIndicator">
+        <!--指示器的种类-->
+        <attr name="indicatorKind" format="enum">
+            <!--文字做标题画出导航栏-->
+            <enum name="TEXT_PUNDINE" value="0"/>
+            <!--文字做标题图片做导航栏-->
+            <enum name="TEXT_IMAGE" value="1"/>
+            <!--图片做标题画出导航栏-->
+            <enum name="IMAGE_PUNDLINE" value="2"/>
+            <!--图片做标题图片做导航栏-->
+            <enum name="IMAGE_IMAGE" value="3"/>
+        </attr>
+        <!--图片作为指示器时的图片格式-->
+        <attr name="imageIndicatorKind" format="enum">
+            <!--一般的格式如：png.jpg.svg等-->
+            <enum name="NORMAL" value="0"/>
+            <!--svga格式-->
+            <enum name="SVGA" value="1"/>
+            <!--json格式-->
+            <enum name="JSON" value="2"/>
+            <!--gif格式-->
+            <enum name="GIF" value="3"/>
+        </attr>
+        <!--字体是否加粗-->
+        <attr name="textBold" format="boolean"/>
+        <!--字体选中颜色-->
+        <attr name="selectTextColor" format="color"/>
+        <!--字体未选中颜色-->
+        <attr name="unSelectTextColor" format="color"></attr>
+        <!--底部导航栏的左内边距-->
+        <attr name="undlinePaddingLeft" format="dimension"/>
+        <!--底部导航栏的右内边距-->
+        <attr name="undlinePaddingRight" format="dimension"/>
+        <!--底部导航栏的上内边距-->
+        <attr name="undlinePaddingTop" format="dimension"/>
+        <!--底部导航栏的下内边距-->
+        <attr name="undlinePaddingBottom" format="dimension"/>
+        <!--字体的左内边距-->
+        <attr name="textPaddingLeft" format="dimension"/>
+        <!--字体的左内边距-->
+        <attr name="textPaddingRight" format="dimension"/>
+        <!--字体的左内边距-->
+        <attr name="textPaddingTop" format="dimension"/>
+        <!--字体的左内边距-->
+        <attr name="textPaddingBottom" format="dimension"/>
+        <!--字体大小-->
+        <attr name="textSize" format="integer"></attr>
+        <!--底部导航栏的资源(可以用图片)-->
+        <attr name="unlineImageResource" format="reference"></attr>
+        <!--指示器得到样式布局-->
+        <attr name="indicatorLayout" format="reference"></attr>
+        <!--是否隐藏低部导航栏-->
+        <attr name="hideUndline" format="boolean"/>
+        <!--图片指示器的图片宽度-->
+        <attr name="imageWidth" format="dimension"/>
+        <!--图片指示器的图片高度-->
+        <attr name="imageHeight" format="dimension"/>
+        <!--底部导航栏一次滑动的时间-->
+        <attr name="undlineScrollTime" format="integer"></attr>
+        <!--是否使用第三方(第三方资源implementation 'com.github.hackware1993:MagicIndicator:1.5.0')-->
+        <attr name="useThird" format="boolean"/>
+        <!--图片指示器的左内边距-->
+        <attr name="imagePaddingLeft" format="dimension"/>
+        <!--图片指示器的右内边距-->
+        <attr name="imagePaddingRight" format="dimension"/>
+        <!--图片指示器的上内边距-->
+        <attr name="imagePaddingTop" format="dimension"/>
+        <!--图片指示器的下内边距-->
+        <attr name="imagePaddingBottom" format="dimension"/>
+        <!--指示器容器的左内边距-->
+        <attr name="containerPaddingLeft" format="dimension"/>
+        <!--指示器容器的右内边距-->
+        <attr name="containerPaddingRight" format="dimension"/>
+        <!--指示器容器的的上内边距-->
+        <attr name="containerPaddingTop" format="dimension"/>
+        <!--指示器容器的的下内边距-->
+        <attr name="containerPaddingBottom" format="dimension"/>
+        <!--这些属性目前只适用一般的图片-->
+        <!--图片指示器是否需要圆角-->
+        <attr name="imageCorner" format="boolean"/>
+        <!--图片指示器是否需要边框-->
+        <attr name="imageFrame" format="boolean"/>
+        <!--图片指示器的圆角大小-->
+        <attr name="imageCornerRadius" format="dimension"/>
+        <!--图片指示器的边框颜色-->
+        <attr name="imageFrameColor" format="color"/>
+        <!--图片指示器的边框大小-->
+        <attr name="imageFrameSize" format="dimension"/>
+        <!--对图片的处理方式(目前只提供两种)-->
+        <attr name="dealImage" format="enum">
+            <enum name="CenterCrop" value="6"/>
+            <enum name="FitXY" value="1"/>
+        </attr>
+        <!--设置动图图片指示器的播放次数(默认-1循环播放)-->
+        <attr name="loop_count" format="integer"></attr>
+    </declare-styleable>
+    <declare-styleable name="IndicatorView">
+        <!--指示器圆弧半径-->
+        <attr name="undlineRadius" format="dimension"/>
+        <!--指示器的颜色-->
+        <attr name="undlineColor" format="color"/>
+        <!--底部导航栏的高度-->
+        <attr name="undlineHeight" format="dimension"/>
+        <!--底部导航栏的左内边距-->
+        <attr name="paddingLeft" format="dimension"/>
+        <!--底部导航栏的右内边距-->
+        <attr name="paddingRight" format="dimension"/>
+    </declare-styleable>
+</resources>

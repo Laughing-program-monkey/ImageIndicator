@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <!--执行指示器的水平滚动-->
+<HorizontalScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView"
+    android:scrollbars="none">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--放置标题栏的容器-->
+<LinearLayout
+    android:id="@+id/indicator_container"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:layout_centerHorizontal="true"
+
+    >
+</LinearLayout>
+        <!--文字指示器的底部导航栏-->
+        <LinearLayout
+            android:id="@+id/un_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:paddingBottom="3dp">
+            <com.indicator.titleview.IndicatorView
+                android:id="@+id/indicatorView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="10dp"
+                app:undlineColor="@color/colorPrimary"
+                app:undlineHeight="5dp"
+              />
+        </LinearLayout>
+        <!--图片做底部导航栏-->
+        <ImageView
+            android:id="@+id/line"
+            android:layout_width="wrap_content"
+            android:layout_height="6dp"
+            android:minWidth="10dp"
+            android:src="@drawable/line_bg"
+            />
+    </LinearLayout>
+</HorizontalScrollView>
+  <!--  &lt;!&ndash;放置内容的容器&ndash;&gt;
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>-->
+</LinearLayout>
