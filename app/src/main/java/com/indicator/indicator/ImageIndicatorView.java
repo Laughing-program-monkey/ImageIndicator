@@ -38,7 +38,7 @@ import androidx.viewpager.widget.ViewPager;
  * author  ：Administrator
  * date    : 2020/4/21 15:24
  */
-public class NormalIndicator extends LinearLayout implements TextTitleView.TitleClick,ImageTitleView.ImageClick{
+public class ImageIndicatorView extends LinearLayout implements TextTitleView.TitleClick,ImageTitleView.ImageClick{
     private Context mContext;
     private HorizontalScrollView mScrollView;
     private LinearLayout indicator_container;
@@ -96,20 +96,20 @@ public class NormalIndicator extends LinearLayout implements TextTitleView.Title
     private ImageTitleView mImageTitleView;
     private int DealImage;
 
-    public NormalIndicator(Context context) {
+    public ImageIndicatorView(Context context) {
         super(context);
         mContext = context;
         init(context);
     }
 
-    public NormalIndicator(Context context, @Nullable AttributeSet attrs) {
+    public ImageIndicatorView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
         initAttr(attrs);
         init(context);
     }
 
-    public NormalIndicator(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public ImageIndicatorView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
     //定义指示器类型的枚举类
@@ -145,43 +145,43 @@ public class NormalIndicator extends LinearLayout implements TextTitleView.Title
     }
     //属性初始化
     public void initAttr(AttributeSet attributeSet) {
-        TypedArray typedArray = mContext.obtainStyledAttributes(attributeSet, R.styleable.NormalIndicator);
-        TextBold = typedArray.getBoolean(R.styleable.NormalIndicator_textBold, false);
-        SelectTextColor = typedArray.getColor(R.styleable.NormalIndicator_selectTextColor, Color.RED);
-        UnSelectTextColor = typedArray.getColor(R.styleable.NormalIndicator_unSelectTextColor, Color.GRAY);
-        TextSize = typedArray.getInteger(R.styleable.NormalIndicator_textSize, 15);
-        undlinePaddingLeft = (int) typedArray.getDimension(R.styleable.NormalIndicator_undlinePaddingLeft, 20);
-        undlinePaddingRight = (int) typedArray.getDimension(R.styleable.NormalIndicator_undlinePaddingRight, 20);
-        undlinePaddingTop = (int) typedArray.getDimension(R.styleable.NormalIndicator_undlinePaddingTop, 0);
-        undlinePaddingBottom = (int) typedArray.getDimension(R.styleable.NormalIndicator_undlinePaddingBottom, 0);
-        TextPaddingLeft = (int) typedArray.getDimension(R.styleable.NormalIndicator_textPaddingLeft, 10);
-        TextPaddingRight = (int) typedArray.getDimension(R.styleable.NormalIndicator_textPaddingRight, 10);
-        TextPaddingTop = (int) typedArray.getDimension(R.styleable.NormalIndicator_textPaddingTop, 0);
-        TextPaddingBottom = (int) typedArray.getDimension(R.styleable.NormalIndicator_textPaddingBottom, 0);
-        UndlineResource = typedArray.getResourceId(R.styleable.NormalIndicator_unlineImageResource, R.drawable.line_bg);
-        HideUndline = typedArray.getBoolean(R.styleable.NormalIndicator_hideUndline, false);
-        IndicatorLayout = typedArray.getResourceId(R.styleable.NormalIndicator_indicatorLayout, R.layout.indicator_layout);
-        ImageWidth = (int) typedArray.getDimension(R.styleable.NormalIndicator_imageWidth, 50);
-        ImageHeight = (int) typedArray.getDimension(R.styleable.NormalIndicator_imageHeight, 20);
-        UndlineScrollTime = typedArray.getInteger(R.styleable.NormalIndicator_undlineScrollTime, 200);
-        UserThird = typedArray.getBoolean(R.styleable.NormalIndicator_useThird, false);
-        IndicatorKind = typedArray.getInt(R.styleable.NormalIndicator_indicatorKind, 0);
-        ImageKind = typedArray.getInt(R.styleable.NormalIndicator_imageIndicatorKind, 0);
-        imagePaddingLeft=(int)typedArray.getDimension(R.styleable.NormalIndicator_imagePaddingLeft,5);
-        imagePaddingRight=(int)typedArray.getDimension(R.styleable.NormalIndicator_imagePaddingRight,5);
-        imagePaddingTop=(int)typedArray.getDimension(R.styleable.NormalIndicator_imagePaddingTop,0);
-        imagePaddingBottom=(int)typedArray.getDimension(R.styleable.NormalIndicator_imagePaddingBottom,0);
-        DealImage=(int)typedArray.getInt(R.styleable.NormalIndicator_dealImage,1);
-        containerPaddingLeft=(int)typedArray.getDimension(R.styleable.NormalIndicator_containerPaddingLeft,0);
-        containerPaddingRight=(int)typedArray.getDimension(R.styleable.NormalIndicator_containerPaddingRight,0);
-        containerPaddingTop=(int)typedArray.getDimension(R.styleable.NormalIndicator_containerPaddingTop,5);
-        containerPaddingBottom=(int)typedArray.getDimension(R.styleable.NormalIndicator_containerPaddingBottom,5);
-        ImageCorner=typedArray.getBoolean(R.styleable.NormalIndicator_imageCorner,false);
-        ImageFrame=typedArray.getBoolean(R.styleable.NormalIndicator_imageFrame,false);
-        ImageCornerRadius=(int)typedArray.getDimension(R.styleable.NormalIndicator_imageCornerRadius,5);
-        ImageFrameColor=typedArray.getColor(R.styleable.NormalIndicator_imageFrameColor,Color.WHITE);
-        ImageFrameSize=(int)typedArray.getDimension(R.styleable.NormalIndicator_imageFrameSize,5);
-        loop_count=typedArray.getInteger(R.styleable.NormalIndicator_loop_count,-1);
+        TypedArray typedArray = mContext.obtainStyledAttributes(attributeSet, R.styleable.ImageIndicatorView);
+        TextBold = typedArray.getBoolean(R.styleable.ImageIndicatorView_textBold, false);
+        SelectTextColor = typedArray.getColor(R.styleable.ImageIndicatorView_selectTextColor, Color.RED);
+        UnSelectTextColor = typedArray.getColor(R.styleable.ImageIndicatorView_unSelectTextColor, Color.GRAY);
+        TextSize = typedArray.getInteger(R.styleable.ImageIndicatorView_textSize, 15);
+        undlinePaddingLeft = (int) typedArray.getDimension(R.styleable.ImageIndicatorView_undlinePaddingLeft, 20);
+        undlinePaddingRight = (int) typedArray.getDimension(R.styleable.ImageIndicatorView_undlinePaddingRight, 20);
+        undlinePaddingTop = (int) typedArray.getDimension(R.styleable.ImageIndicatorView_undlinePaddingTop, 0);
+        undlinePaddingBottom = (int) typedArray.getDimension(R.styleable.ImageIndicatorView_undlinePaddingBottom, 0);
+        TextPaddingLeft = (int) typedArray.getDimension(R.styleable.ImageIndicatorView_textPaddingLeft, 10);
+        TextPaddingRight = (int) typedArray.getDimension(R.styleable.ImageIndicatorView_textPaddingRight, 10);
+        TextPaddingTop = (int) typedArray.getDimension(R.styleable.ImageIndicatorView_textPaddingTop, 0);
+        TextPaddingBottom = (int) typedArray.getDimension(R.styleable.ImageIndicatorView_textPaddingBottom, 0);
+        UndlineResource = typedArray.getResourceId(R.styleable.ImageIndicatorView_unlineImageResource, R.drawable.line_bg);
+        HideUndline = typedArray.getBoolean(R.styleable.ImageIndicatorView_hideUndline, false);
+        IndicatorLayout = typedArray.getResourceId(R.styleable.ImageIndicatorView_indicatorLayout, R.layout.indicator_layout);
+        ImageWidth = (int) typedArray.getDimension(R.styleable.ImageIndicatorView_imageWidth, 50);
+        ImageHeight = (int) typedArray.getDimension(R.styleable.ImageIndicatorView_imageHeight, 20);
+        UndlineScrollTime = typedArray.getInteger(R.styleable.ImageIndicatorView_undlineScrollTime, 200);
+        UserThird = typedArray.getBoolean(R.styleable.ImageIndicatorView_useThird, false);
+        IndicatorKind = typedArray.getInt(R.styleable.ImageIndicatorView_indicatorKind, 0);
+        ImageKind = typedArray.getInt(R.styleable.ImageIndicatorView_imageIndicatorKind, 0);
+        imagePaddingLeft=(int)typedArray.getDimension(R.styleable.ImageIndicatorView_imagePaddingLeft,5);
+        imagePaddingRight=(int)typedArray.getDimension(R.styleable.ImageIndicatorView_imagePaddingRight,5);
+        imagePaddingTop=(int)typedArray.getDimension(R.styleable.ImageIndicatorView_imagePaddingTop,0);
+        imagePaddingBottom=(int)typedArray.getDimension(R.styleable.ImageIndicatorView_imagePaddingBottom,0);
+        DealImage=(int)typedArray.getInt(R.styleable.ImageIndicatorView_dealImage,1);
+        containerPaddingLeft=(int)typedArray.getDimension(R.styleable.ImageIndicatorView_containerPaddingLeft,0);
+        containerPaddingRight=(int)typedArray.getDimension(R.styleable.ImageIndicatorView_containerPaddingRight,0);
+        containerPaddingTop=(int)typedArray.getDimension(R.styleable.ImageIndicatorView_containerPaddingTop,5);
+        containerPaddingBottom=(int)typedArray.getDimension(R.styleable.ImageIndicatorView_containerPaddingBottom,5);
+        ImageCorner=typedArray.getBoolean(R.styleable.ImageIndicatorView_imageCorner,false);
+        ImageFrame=typedArray.getBoolean(R.styleable.ImageIndicatorView_imageFrame,false);
+        ImageCornerRadius=(int)typedArray.getDimension(R.styleable.ImageIndicatorView_imageCornerRadius,5);
+        ImageFrameColor=typedArray.getColor(R.styleable.ImageIndicatorView_imageFrameColor,Color.WHITE);
+        ImageFrameSize=(int)typedArray.getDimension(R.styleable.ImageIndicatorView_imageFrameSize,5);
+        loop_count=typedArray.getInteger(R.styleable.ImageIndicatorView_loop_count,-1);
     }
     //初始化
     public void init(Context context) {
