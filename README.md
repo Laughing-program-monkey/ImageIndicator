@@ -41,7 +41,7 @@ indicatorKind  | 指示器的种类 |  enum  | TEXT_PUNDINE(0) | NO
 imageIndicatorKind  | 图片指示器的图片格式 |  enum  | NORMAL(0) | NO
 textBold  | 字体是否加粗 |  boolean  | false | NO
 selectTextColor  | 选中字体颜色 |  color  | Color.RED | NO
-UnSelectTextColor  | 未选中字体颜色 |  color  | Color.GRAY | NO
+unSelectTextColor  | 未选中字体颜色 |  color  | Color.GRAY | NO
 textSize  | 字体大小 |  integer  | 15 | NO
 textPaddingLeft  | 字体的左内边距(右，上，下类似) |  dimension  | 10 | NO
 unlineImageResource  | 底部导航栏的资源(可以用图片) |  reference  | ---- | NO
