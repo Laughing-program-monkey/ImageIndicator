@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="NormalIndicator">
+    <declare-styleable name="ImageIndicatorView">
         <!--指示器的种类-->
         <attr name="indicatorKind" format="enum">
             <!--文字做标题画出导航栏-->

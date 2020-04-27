@@ -4,12 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RadioButton;
 
 import com.indicator.bean.ImageBean;
-import com.indicator.indicator.NormalIndicator;
+import com.indicator.indicator.ImageIndicatorView;
 import com.indicator.indicator.ViewPagerAdapter;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
@@ -25,7 +26,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.Nullable;
-import androidx.viewpager.widget.ViewPager;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -37,37 +37,37 @@ import butterknife.OnClick;
  * date    : 2020/4/21 16:32
  */
 public class IndicatorActivity extends Activity {
-    @BindView(R.id.viewpager)
+    @BindView(R2.id.viewpager)
     ViewPager mViewPager;
-    @BindView(R.id.indicator)
-    NormalIndicator indicator;
-    @BindView(R.id.indicator1)
-    NormalIndicator indicator1;
-    @BindView(R.id.indicator2)
-    NormalIndicator indicator2;
-    @BindView(R.id.indicator3)
-    NormalIndicator indicator3;
-    @BindView(R.id.indicator4)
-    NormalIndicator indicator4;
-    @BindView(R.id.indicator5)
-    NormalIndicator indicator5;
-    @BindView(R.id.indicator6)
-    NormalIndicator indicator6;
-    @BindView(R.id.indicator7)
-    NormalIndicator indicator7;
-    @BindView(R.id.checkbox)
+    @BindView(R2.id.indicator)
+    ImageIndicatorView indicator;
+    @BindView(R2.id.indicator1)
+    ImageIndicatorView indicator1;
+    @BindView(R2.id.indicator2)
+    ImageIndicatorView indicator2;
+    @BindView(R2.id.indicator3)
+    ImageIndicatorView indicator3;
+    @BindView(R2.id.indicator4)
+    ImageIndicatorView indicator4;
+    @BindView(R2.id.indicator5)
+    ImageIndicatorView indicator5;
+    @BindView(R2.id.indicator6)
+    ImageIndicatorView indicator6;
+    @BindView(R2.id.indicator7)
+    ImageIndicatorView indicator7;
+    @BindView(R2.id.checkbox)
     RadioButton checkBox;
-    @BindView(R.id.checkbox1)
+    @BindView(R2.id.checkbox1)
     RadioButton checkBox1;
-    @BindView(R.id.checkbox2)
+    @BindView(R2.id.checkbox2)
     RadioButton checkBox2;
-    @BindView(R.id.checkbox3)
+    @BindView(R2.id.checkbox3)
     RadioButton checkBox3;
-    @BindView(R.id.checkbox4)
+    @BindView(R2.id.checkbox4)
     RadioButton checkBox4;
-    @BindView(R.id.checkbox5)
+    @BindView(R2.id.checkbox5)
     RadioButton checkBox5;
-    @BindView(R.id.checkbox6)
+    @BindView(R2.id.checkbox6)
     RadioButton checkBox6;
     private List<View> list = new ArrayList<>();
     private List<String> title = new ArrayList<>();
@@ -76,7 +76,7 @@ public class IndicatorActivity extends Activity {
     private List<ImageBean> mImageBeans2 = new ArrayList<>();
     private List<ImageBean> mImageBeans3 = new ArrayList<>();
     private List<RadioButton> mCheckBoxes = new ArrayList<>();
-    private List<NormalIndicator> mNormalIndicators = new ArrayList<>();
+    private List<ImageIndicatorView> mNormalIndicators = new ArrayList<>();
     private RadioButton lastRadioButton;
     private MagicIndicator mMagicIndicator;
 
@@ -158,31 +158,23 @@ public class IndicatorActivity extends Activity {
         initIndicator();
     }
 
-    @OnClick({R.id.checkbox, R.id.checkbox1, R.id.checkbox2, R.id.checkbox3, R.id.checkbox4, R.id.checkbox5, R.id.checkbox6})
+    @OnClick({R2.id.checkbox, R2.id.checkbox1, R2.id.checkbox2, R2.id.checkbox3, R2.id.checkbox4, R2.id.checkbox5, R2.id.checkbox6})
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.checkbox:
-                init(0);
-                break;
-            case R.id.checkbox1:
-                init(1);
-                break;
-            case R.id.checkbox2:
-                init(2);
-                break;
-            case R.id.checkbox3:
-                init(3);
-                break;
-            case R.id.checkbox4:
-                init(4);
-                break;
-            case R.id.checkbox5:
-                init(5);
-                break;
-            case R.id.checkbox6:
-                init(6);
-                break;
-
+        int id = view.getId();
+        if (id == R.id.checkbox) {
+            init(0);
+        } else if (id == R.id.checkbox1) {
+            init(1);
+        } else if (id == R.id.checkbox2) {
+            init(2);
+        } else if (id == R.id.checkbox3) {
+            init(3);
+        } else if (id == R.id.checkbox4) {
+            init(4);
+        } else if (id == R.id.checkbox5) {
+            init(5);
+        } else if (id == R.id.checkbox6) {
+            init(6);
         }
     }
 

@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -15,8 +16,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.indicator.Interface.IndicatorInterface;
 import com.indicator.ImageIndicator.R;
+import com.indicator.Interface.IndicatorInterface;
 import com.indicator.bean.ImageBean;
 import com.indicator.bean.PositionData;
 import com.indicator.titleview.ImageTitleView;
@@ -30,7 +31,7 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.viewpager.widget.ViewPager;
+
 
 /**
  * project : AnimationImageTest
