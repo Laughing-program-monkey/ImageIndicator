@@ -33,7 +33,7 @@
 	        implementation 'com.github.Laughing-program-monkey:ImageIndicator:版本号(如：1.0.7)'
 	}` 
 	
-> 重点：gradle版本------》（classpath 'com.android.tools.build:gradle:3.5.2'）
+> 重点：gradle版本------》（classpath 'com.android.tools.build:gradle:3.5.+'）
 ### Introducing attributes
 Attribute  | Describe  | Type | Default value | Must
 ---- | ----- |  --- | ---- | -----
