@@ -76,10 +76,19 @@ useThird  | 是否使用第三方 |  boolean  | false | NO
 ```
 ### Code
 ``` 
+//一般图片资源(normal,gif)
 List<ImageBean> mImageBeans = new ArrayList<>();
-ImageBean<T> imageBean = new ImageBean().setSelectResorce("图片名称").setUnselectResorce(图片资源).setThumResorce(图片资源);
+ImageBean<Integer> imageBean = new ImageBean().setSelectResorce(图片资源).setUnselectResorce(图片资源).setThumResorce(图片资源);
 mImageBeans3.add(imageBean);
 mImageBeans.add(imageBean);
 indicator.setImageBeans(mImageBeans);
-indicator.setViewPager(mViewPager); 
+indicator.setViewPager(mViewPager);
+
+//特殊图片资源(json（名称后缀紧跟）,svga(名称不要后缀))
+List<ImageBean> mImageBeans = new ArrayList<>();
+ImageBean<String> imageBean = new ImageBean().setSelectResorce("图片名称").setUnselectResorce(图片资源).setThumResorce(图片资源);
+mImageBeans3.add(imageBean);
+mImageBeans.add(imageBean);
+indicator.setImageBeans(mImageBeans);
+indicator.setViewPager(mViewPager);
 ```
