@@ -2,10 +2,12 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.butterknife'
 apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.Laughing-program-monkey'
+//apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     buildToolsVersion "28.0.3"
     defaultConfig {
+        //applicationId "com.indicator.Indicator"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -24,13 +26,11 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+configurations {
+    compile.exclude group: 'androidx.core', module: 'core' //重点
+}
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation fileTree(dir: 'libs')
     //gif库，播放礼物gif用
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.7'
     //可以动态设置阴影的颜色
