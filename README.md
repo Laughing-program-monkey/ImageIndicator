@@ -45,7 +45,7 @@ unSelectTextColor  | 未选中字体颜色 |  color  | Color.GRAY | NO
 textSize  | 字体大小 |  integer  | 15 | NO
 textPaddingLeft  | 字体的左内边距(右，上，下类似) |  dimension  | 10 | NO
 unlineImageResource  | 底部导航栏的资源(可以用图片) |  reference  | ---- | NO
-indicatorLayout  | 指示器得到样式布局 |  reference  | ---- | NO
+indicatorLayout  | 指示器默认样式布局 |  reference  | ---- | NO
 hideUndline  | 是否隐藏低部导航栏 |  boolean  | false | NO
 undlinePaddingLeft  | 底部导航栏的左内边距(右，上，下类似) |  dimension  | 20 | NO
 imageWidth  | 图片指示器的图片宽度 |  dimension  | 50 | NO
