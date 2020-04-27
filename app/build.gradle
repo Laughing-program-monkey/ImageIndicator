@@ -1,11 +1,10 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.Laughing-program-monkey'
 android {
     compileSdkVersion 28
     buildToolsVersion "28.0.3"
     defaultConfig {
-        applicationId "com.indicator.ImageIndicator"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
