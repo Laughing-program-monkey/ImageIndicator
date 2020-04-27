@@ -11,3 +11,19 @@
    c:svga动图,播放引用第三方库(implementation 'com.github.yyued:SVGAPlayer-Android:2.1.1')
    d:json格式图，播放引用第三方库(implementation 'com.airbnb.android:lottie:1.0.1')
 另外，图片指示器有许多属性可以灵活的控制，待用户使用时再挖掘。
+
+HOW TO USE ?
+ 首先 ：把
+ allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+   添加到你的项目的根目录下的build.gradle文件中(Add it in your root build.gradle at the end of repositories)
+   
+ 其次添加依赖：把
+ dependencies {
+	        implementation 'com.github.Laughing-program-monkey:ImageIndicator:1.0.0'
+	}
+放到项目的build.gradle文件中。
