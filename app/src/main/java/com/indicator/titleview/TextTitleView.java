@@ -2,6 +2,7 @@ package com.indicator.titleview;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
@@ -14,9 +15,6 @@ import com.indicator.bean.PositionData;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import androidx.annotation.Nullable;
-
 /**
  * project : AnimationImageTest
  * package : com.user.titleview
@@ -147,7 +145,7 @@ public class TextTitleView extends LinearLayout implements IndicatorInterface {
             mViewList.clear();
             for (int i = 0; i < TitleDatas.size(); i++) {
                 TextView textView = new TextView(getContext());
-                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
                 textView.setPadding(TextPaddingLeft, TextPaddingTop, TextPaddingRight, TextPaddingBottom);
                 params.gravity = Gravity.CENTER;
                 textView.setLayoutParams(params);

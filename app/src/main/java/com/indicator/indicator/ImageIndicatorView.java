@@ -5,6 +5,8 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -28,11 +30,6 @@ import net.lucode.hackware.magicindicator.MagicIndicator;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
-
 /**
  * project : AnimationImageTest
  * package : com.user.indicator
@@ -50,7 +47,6 @@ public class ImageIndicatorView extends LinearLayout implements TextTitleView.Ti
     private int width;//文字宽度的存储
     private int lastPosition;//暂时存储上一个viewpager内容
     private boolean first = true;//是否是第一次初始化
-
     private List<ImageBean> mImageBeans;//图片作为指示器的资源
     private boolean TextBold;//字体是否加粗
     private int SelectTextColor;//选中字体的颜色
@@ -277,7 +273,7 @@ public class ImageIndicatorView extends LinearLayout implements TextTitleView.Ti
 
     //动态设置下划线的属性
     public void setUndlineParam(int position) {
-        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) line.getLayoutParams();
+        LayoutParams params = (LayoutParams) line.getLayoutParams();
         Log.e("dhewudwfuiwf", mPositionData.get(position).width()+"");
         params.width = mPositionData.get(position).width();
         line.setPadding(undlinePaddingLeft, undlinePaddingTop, undlinePaddingRight, undlinePaddingBottom);
@@ -361,7 +357,7 @@ public class ImageIndicatorView extends LinearLayout implements TextTitleView.Ti
             switch (IndicatorKind){
                 case 0:
                 case 2:
-                    LinearLayout.LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+                    LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
                     params.width = indicator_container.getMeasuredWidth();
                     params.height = indicatorView.getUndlineHeight();
                     indicatorView.setLayoutParams(params);

@@ -1,23 +1,21 @@
+﻿//apply plugin: 'com.android.application'
 apply plugin: 'com.android.library'
-apply plugin: 'com.jakewharton.butterknife'
 apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.Laughing-program-monkey'
-//apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.3"
     defaultConfig {
-        //applicationId "com.indicator.Indicator"
+        //applicationId "com.indicator.imagedicator"
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     //自3.6.0开始需要java8的支持
@@ -26,16 +24,11 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-configurations {
-    compile.exclude group: 'androidx.core', module: 'core' //重点
 }
 dependencies {
-    implementation 'com.android.support:appcompat-v7:26.+'
     implementation fileTree(dir: 'libs')
     //gif库，播放礼物gif用
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.7'
-    //可以动态设置阴影的颜色
-    implementation 'io.github.meetsl:SCardView:1.2'
     //利用lottie加载动画
     implementation 'com.airbnb.android:lottie:1.0.1'
     //加载svga动图
@@ -46,6 +39,7 @@ dependencies {
     //实现带圆角和边框的ImageView
     implementation 'com.makeramen:roundedimageview:2.3.0'
     //黄油刀
-    implementation 'com.jakewharton:butterknife:10.0.0'
-    annotationProcessor'com.jakewharton:butterknife-compiler:10.0.0'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+   
 }

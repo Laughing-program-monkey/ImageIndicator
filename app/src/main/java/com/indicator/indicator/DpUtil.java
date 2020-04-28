@@ -4,7 +4,7 @@ package com.indicator.indicator;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
 
-import com.indicator.AppContext;
+import com.indicator.App;
 
 /**
  * Created by cxf on 2017/8/9.
@@ -16,7 +16,7 @@ public class DpUtil {
     private static float scale;
 
     static {
-        scale = AppContext.sInstance.getResources().getDisplayMetrics().density;
+        scale = App.sInstance.getResources().getDisplayMetrics().density;
     }
 
     public static int dp2px(int dpVal) {//dp转px
@@ -27,7 +27,7 @@ public class DpUtil {
     }
     //获取屏幕的宽度
     public static int getScreenWidth(){
-       Resources mResources = AppContext.sInstance.getResources();
+       Resources mResources = App.sInstance.getResources();
         DisplayMetrics dm = mResources.getDisplayMetrics();
      return  dm.widthPixels;
     }

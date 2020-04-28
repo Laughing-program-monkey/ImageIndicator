@@ -1,4 +1,4 @@
-package com.indicator.ImageIndicator;
+package imageindicator.indicator.com.thirdproject;
 
 import org.junit.Test;
 

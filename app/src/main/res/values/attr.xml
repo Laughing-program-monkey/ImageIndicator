@@ -39,11 +39,11 @@
         <attr name="undlinePaddingBottom" format="dimension"/>
         <!--字体的左内边距-->
         <attr name="textPaddingLeft" format="dimension"/>
-        <!--字体的左内边距-->
+        <!--字体的右内边距-->
         <attr name="textPaddingRight" format="dimension"/>
-        <!--字体的左内边距-->
+        <!--字体的上内边距-->
         <attr name="textPaddingTop" format="dimension"/>
-        <!--字体的左内边距-->
+        <!--字体的底内边距-->
         <attr name="textPaddingBottom" format="dimension"/>
         <!--字体大小-->
         <attr name="textSize" format="integer"></attr>

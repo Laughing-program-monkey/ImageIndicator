@@ -6,19 +6,19 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 
-import com.indicator.Interface.IndicatorInterface;
 import com.indicator.ImageIndicator.R;
+import com.indicator.Interface.IndicatorInterface;
 import com.indicator.bean.PositionData;
 
 import java.util.List;
 
-import androidx.annotation.Nullable;
 
 /**
  * project : AnimationImageTest

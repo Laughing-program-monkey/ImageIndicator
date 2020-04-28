@@ -2,6 +2,7 @@ package com.indicator.titleview;
 
 import android.animation.Animator;
 import android.content.Context;
+import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,8 +23,6 @@ import com.indicator.utils.SvgaUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import androidx.annotation.Nullable;
 import pl.droidsonroids.gif.GifImageView;
 
 /**
@@ -316,7 +315,7 @@ public class ImageTitleView extends LinearLayout implements IndicatorInterface {
 
     //设置params
     public void setParams(View imageView, int i) {
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         params.width = ImageWidth;
         params.height = ImageHeight;
         imageView.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
