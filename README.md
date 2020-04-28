@@ -25,7 +25,7 @@
 	        implementation 'com.github.Laughing-program-monkey:ImageIndicator:版本号(如：1.0.7)'
 	}
   ` 
- > androidx环境的建议使用1.0.7及以下的，android环境的建议使用2.0.4 
+ > androidx环境的建议使用1.0.7及以下的，android环境的建议使用2.0.4/2.0.5 
   
 ### Introducing attributes
 Attribute  | Describe  | Type | Default value | Must
