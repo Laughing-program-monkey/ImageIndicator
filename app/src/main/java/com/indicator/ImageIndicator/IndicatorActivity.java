@@ -177,28 +177,28 @@ public class IndicatorActivity extends Activity implements View.OnClickListener 
     }
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.checkbox:
-                init(0);
-                break;
-            case R.id.checkbox1:
-                init(1);
-                break;
-            case R.id.checkbox2:
-                init(3);
-                break;
-            case R.id.checkbox3:
-                init(3);
-                break;
-            case R.id.checkbox4:
-                init(4);
-                break;
-            case R.id.checkbox5:
-                init(5);
-                break;
-            case R.id.checkbox6:
-                init(6);
-                break;
+        int i = view.getId();
+        if (i == R.id.checkbox) {
+            init(0);
+
+        } else if (i == R.id.checkbox1) {
+            init(1);
+
+        } else if (i == R.id.checkbox2) {
+            init(3);
+
+        } else if (i == R.id.checkbox3) {
+            init(3);
+
+        } else if (i == R.id.checkbox4) {
+            init(4);
+
+        } else if (i == R.id.checkbox5) {
+            init(5);
+
+        } else if (i == R.id.checkbox6) {
+            init(6);
+
         }
     }
 
