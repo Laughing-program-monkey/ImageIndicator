@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
 
 import com.indicator.bean.ImageBean;
@@ -26,49 +27,44 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
-
 /**
  * project : AnimationImageTest
  * package : com.user.animationimagetest
  * author  ：Administrator
  * date    : 2020/4/21 16:32
  */
-public class IndicatorActivity extends Activity {
-    @BindView(R.id.viewpager)
+public class IndicatorActivity extends Activity implements View.OnClickListener {
+    //@BindView(R2.id.viewpager)
     ViewPager mViewPager;
-    @BindView(R.id.indicator)
+    //@BindView(R2.id.indicator)
     ImageIndicatorView indicator;
-    @BindView(R.id.indicator1)
+    // @BindView(R2.id.indicator1)
     ImageIndicatorView indicator1;
-    @BindView(R.id.indicator2)
+    // @BindView(R2.id.indicator2)
     ImageIndicatorView indicator2;
-    @BindView(R.id.indicator3)
+    // @BindView(R2.id.indicator3)
     ImageIndicatorView indicator3;
-    @BindView(R.id.indicator4)
+    // @BindView(R2.id.indicator4)
     ImageIndicatorView indicator4;
-    @BindView(R.id.indicator5)
+    // @BindView(R2.id.indicator5)
     ImageIndicatorView indicator5;
-    @BindView(R.id.indicator6)
+    //@BindView(R2.id.indicator6)
     ImageIndicatorView indicator6;
-    @BindView(R.id.indicator7)
+    // @BindView(R2.id.indicator7)
     ImageIndicatorView indicator7;
-    @BindView(R.id.checkbox)
+    // @BindView(R2.id.checkbox)
     RadioButton checkBox;
-    @BindView(R.id.checkbox1)
+    // @BindView(R2.id.checkbox1)
     RadioButton checkBox1;
-    @BindView(R.id.checkbox2)
+    // @BindView(R2.id.checkbox2)
     RadioButton checkBox2;
-    @BindView(R.id.checkbox3)
+    //@BindView(R2.id.checkbox3)
     RadioButton checkBox3;
-    @BindView(R.id.checkbox4)
+    // @BindView(R2.id.checkbox4)
     RadioButton checkBox4;
-    @BindView(R.id.checkbox5)
+    // @BindView(R2.id.checkbox5)
     RadioButton checkBox5;
-    @BindView(R.id.checkbox6)
+    // @BindView(R2.id.checkbox6)
     RadioButton checkBox6;
     private List<View> list = new ArrayList<>();
     private List<String> title = new ArrayList<>();
@@ -80,12 +76,21 @@ public class IndicatorActivity extends Activity {
     private List<ImageIndicatorView> mNormalIndicators = new ArrayList<>();
     private RadioButton lastRadioButton;
     private MagicIndicator mMagicIndicator;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
+        indicator = (ImageIndicatorView) findViewById(R.id.indicator);
+        indicator1 = (ImageIndicatorView) findViewById(R.id.indicator1);
+        indicator2 = (ImageIndicatorView) findViewById(R.id.indicator2);
+        indicator3 = (ImageIndicatorView) findViewById(R.id.indicator3);
+        indicator4 = (ImageIndicatorView) findViewById(R.id.indicator4);
+        indicator5 = (ImageIndicatorView) findViewById(R.id.indicator5);
+        indicator6=(ImageIndicatorView)findViewById(R.id.indicator6) ;
+        indicator7=(ImageIndicatorView)findViewById(R.id.indicator7) ;
+
         mNormalIndicators.add(indicator);
         mNormalIndicators.add(indicator1);
         mNormalIndicators.add(indicator2);
@@ -94,7 +99,20 @@ public class IndicatorActivity extends Activity {
         mNormalIndicators.add(indicator5);
         mNormalIndicators.add(indicator6);
         mNormalIndicators.add(indicator7);
-
+        checkBox=(RadioButton) findViewById(R.id.checkbox) ;
+        checkBox1=(RadioButton)findViewById(R.id.checkbox1) ;
+        checkBox2=(RadioButton)findViewById(R.id.checkbox2) ;
+        checkBox3=(RadioButton)findViewById(R.id.checkbox3) ;
+        checkBox4=(RadioButton)findViewById(R.id.checkbox4) ;
+        checkBox5=(RadioButton)findViewById(R.id.checkbox5) ;
+        checkBox6=(RadioButton)findViewById(R.id.checkbox6) ;
+        checkBox.setOnClickListener(this);
+        checkBox1.setOnClickListener(this);
+        checkBox2.setOnClickListener(this);
+        checkBox3.setOnClickListener(this);
+        checkBox4.setOnClickListener(this);
+        checkBox5.setOnClickListener(this);
+        checkBox6.setOnClickListener(this);
         lastRadioButton = checkBox;
         mCheckBoxes.add(checkBox);
         mCheckBoxes.add(checkBox1);
@@ -138,7 +156,7 @@ public class IndicatorActivity extends Activity {
         }
         ViewPagerAdapter adapter = new ViewPagerAdapter(list);
         mViewPager.setAdapter(adapter);
-        mMagicIndicator=indicator7.getThirdIndicator();
+        mMagicIndicator = indicator7.getThirdIndicator();
         //文字指示器+画出底部导航栏
         indicator.setTitleDatas(title);
         indicator.setViewPager(mViewPager);
@@ -157,8 +175,7 @@ public class IndicatorActivity extends Activity {
         //初始化第三方指示器
         initIndicator();
     }
-
-    @OnClick({R.id.checkbox, R.id.checkbox1, R.id.checkbox2, R.id.checkbox3, R.id.checkbox4, R.id.checkbox5, R.id.checkbox6})
+    @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.checkbox:
@@ -168,7 +185,7 @@ public class IndicatorActivity extends Activity {
                 init(1);
                 break;
             case R.id.checkbox2:
-                init(2);
+                init(3);
                 break;
             case R.id.checkbox3:
                 init(3);
@@ -182,9 +199,7 @@ public class IndicatorActivity extends Activity {
             case R.id.checkbox6:
                 init(6);
                 break;
-
         }
-
     }
 
     //初始化
@@ -200,25 +215,27 @@ public class IndicatorActivity extends Activity {
         mNormalIndicators.get(index).setViewPager(mViewPager);
 
     }
+
     //初始化导航栏
-    public  void initIndicator(){
-        CommonNavigator commonNavigator=new CommonNavigator(this);
+    public void initIndicator() {
+        CommonNavigator commonNavigator = new CommonNavigator(this);
         commonNavigator.setSkimOver(true);
         commonNavigator.setAdapter(new CommonNavigatorAdapter() {
             @Override
             public int getCount() {
                 return title.size();
             }
+
             @Override
             public IPagerTitleView getTitleView(Context context, int index) {
-                ClipPagerTitleView clipPagerTitleView=new ClipPagerTitleView(context);
+                ClipPagerTitleView clipPagerTitleView = new ClipPagerTitleView(context);
                 clipPagerTitleView.setText(title.get(index));
                 clipPagerTitleView.setClipColor(Color.RED);
                 clipPagerTitleView.setTextColor(Color.GRAY);
                 clipPagerTitleView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mViewPager.setCurrentItem(index,true);
+                        mViewPager.setCurrentItem(index, true);
                     }
                 });
                 return clipPagerTitleView;
@@ -226,7 +243,7 @@ public class IndicatorActivity extends Activity {
 
             @Override
             public IPagerIndicator getIndicator(Context context) {
-                LinePagerIndicator linePagerIndicator=new LinePagerIndicator(context);
+                LinePagerIndicator linePagerIndicator = new LinePagerIndicator(context);
                 linePagerIndicator.setMode(LinePagerIndicator.MODE_EXACTLY);
                 linePagerIndicator.setColors(Color.RED);
                 linePagerIndicator.setLineHeight(10);
@@ -236,8 +253,8 @@ public class IndicatorActivity extends Activity {
             }
         });
         mMagicIndicator.setNavigator(commonNavigator);
-         ViewPagerHelper.bind(mMagicIndicator, mViewPager);
+        ViewPagerHelper.bind(mMagicIndicator, mViewPager);
         //设置页数
-       // mViewPager.setCurrentItem(0);
+        // mViewPager.setCurrentItem(0);
     }
 }

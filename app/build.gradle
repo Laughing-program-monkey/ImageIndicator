@@ -3,11 +3,11 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.Laughing-program-monkey'
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     defaultConfig {
-       // applicationId "com.indicator.imagedicator"
+      //  applicationId "com.indicator.imagedicator"
         minSdkVersion 21
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -24,12 +24,12 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-/*configurations.all {
+configurations.all {
     resolutionStrategy {
         force "com.android.support:appcompat-v7:26.1.0"
        // force "com.android.support:support-v4:26.0.1"
     }
-}*/
+}
 dependencies {
     implementation fileTree(dir: 'libs')
     //gif库，播放礼物gif用
@@ -43,8 +43,8 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.7'
     //实现带圆角和边框的ImageView
     implementation 'com.makeramen:roundedimageview:2.3.0'
-    //黄油刀
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-   // implementation 'com.github.Laughing-program-monkey:ImageIndicator:1.0.7'
+   /* //黄油刀
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+   // implementation 'com.github.Laughing-program-monkey:ImageIndicator:1.0.7'*/
 }
