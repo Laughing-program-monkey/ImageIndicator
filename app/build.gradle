@@ -1,11 +1,11 @@
-﻿//apply plugin: 'com.android.application'
+//apply plugin: 'com.android.application'
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.Laughing-program-monkey'
 android {
     compileSdkVersion 26
     defaultConfig {
-        //applicationId "com.indicator.imagedicator"
+       // applicationId "com.indicator.imagedicator"
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
@@ -24,7 +24,12 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-}
+/*configurations.all {
+    resolutionStrategy {
+        force "com.android.support:appcompat-v7:26.1.0"
+       // force "com.android.support:support-v4:26.0.1"
+    }
+}*/
 dependencies {
     implementation fileTree(dir: 'libs')
     //gif库，播放礼物gif用
@@ -41,5 +46,5 @@ dependencies {
     //黄油刀
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-   
+   // implementation 'com.github.Laughing-program-monkey:ImageIndicator:1.0.7'
 }
